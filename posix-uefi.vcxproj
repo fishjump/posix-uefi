@@ -1,0 +1,13 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="build" ToolsVersion="16.0">
+
+    <Target Name="build">
+        <Message Text="Building $(MSBuildProjectName)." />
+        <Exec Command="make -C modules/posix-uefi/uefi" EchoOff="true" />
+        <Exec Command="make clean -C modules/posix-uefi/uefi" EchoOff="true" />
+        <Move SourceFiles="modules/posix-uefi/build/uefi/uefi.h" DestinationFolder="includes" />
+        <Move SourceFiles="modules/posix-uefi/build/uefi/crt0.o" DestinationFolder="libs" />
+        <Move SourceFiles="modules/posix-uefi/build/uefi/libuefi.a" DestinationFolder="libs" />
+        <Move SourceFiles="modules/posix-uefi/build/uefi/link.ld" DestinationFolder="libs" />
+    </Target>
+
+</Project>

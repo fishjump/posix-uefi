@@ -1,0 +1,3 @@
+[submodule "modules/posix-uefi"]
+	path = modules/posix-uefi
+	url = https://gitlab.com/bztsrc/posix-uefi.git
